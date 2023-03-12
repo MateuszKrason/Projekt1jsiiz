@@ -2,8 +2,9 @@ from os import system
 import random
 import math
 import time
+import subprocess
 
-num_tests = 100000
+num_tests = 1000
 test_data = []
 
 for i in range(num_tests):
@@ -20,11 +21,7 @@ print("Python implementation: " + str(end_time - start_time) +" seconds")
 
 start_time = time.time()
 for data in test_data:
-    # with open("output.txt", "w") as output_file:
-    #     output_file.seek(0)
-    #     output_file.write(str(data[0]) + " " + str(data[1]))
-    system('g++ cpp_implementation.cpp -o cpp_implementation')
-    system("cpp_implementation {data[0]} {data[1]} > output.txt")
+    subprocess.call(["cpp_implementation", str(data[0]), str(data[1])])
 end_time = time.time()
 
 print("C++ implementation: " + str(end_time - start_time) +" seconds")

@@ -18,10 +18,10 @@ for i, data in enumerate(test_data):
         f.write(str(data[0]) + " " + str(data[1]))
 
     with open("python_"+ str(i+1) + ".txt", "w") as f:
-        result = math.gcd(data[0], data[1])
-        f.write(str(result))
+        fun = popr()
+        res = fun.result(data[0], data[1])
+        f.write(str(res))
 
-    # system("g++ -o cpp cpp_implementation.cpp")
     x = subprocess.call(["cpp_implementation", str(data[0]), str(data[1])])
     print(str(x))
     with open("cpp_" + str(i+1) + ".txt", "w") as f:
