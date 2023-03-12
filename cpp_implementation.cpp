@@ -1,12 +1,12 @@
 #include <iostream>
 #include <numeric>
 
-int funct(int a, int b) {
-    // int a = 462;
-    // int b = 1071;
-    int result = std::gcd(a, b);
+int main(int a, char* b[]) {
+    
+    int arg1 = std::atoi(b[1]);
+    int arg2 = std::atoi(b[2]);
 
-    std::cout << result << std::endl;
+    int result = std::gcd(arg1, arg2);
 
     return result;
 }
